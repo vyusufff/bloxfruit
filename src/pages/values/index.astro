@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { ValueList } from '../../components/react/ValueList'
+import { ITEMS_META } from '../../data/items'
+
+const count = ITEMS_META.count || 0
+---
+
+<Layout
+  title="Blox Fruits Trading Value List"
+  description={`Blox Fruits trading value list — ${count}+ fruits, limiteds, and gamepasses with demand. Updated regularly for traders.`}
+>
+  <ValueList client:load />
+</Layout>

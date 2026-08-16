@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { ITEMS, ITEMS_META } from '../data/items'
+import { itemHref } from '../data/slugs'
+
+const count = ITEMS_META.count || 0
+
+function formatValue(value: number) {
+  if (!Number.isFinite(value)) return '$0'
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(1)}B`
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(0)}M`
+  return `$${value.toLocaleString('en-US')}`
+}
+
+const props = [
+  { src: '/items/dragon-east.jpg', class: 'prop-dragon' },
+  { src: '/items/dragon-west.jpg', class: 'prop-kitsune' },
+  { src: '/items/dough.png', class: 'prop-dough' },
+  { src: '/items/control.png', class: 'prop-control' },
+  { src: '/items/yeti.jpg', class: 'prop-yeti' },
+]
+
+const mobileFruits = [
+  '/items/dragon-east.jpg',
+  '/items/dough.png',
+  '/items/control.png',
+  '/items/gas.png',
+  '/items/portal.png',
+]
+
+const featureIds = [
+  'dragon-east',
+  'dragon-west',
+  'control',
+  'yeti',
+  'dough',
+  'gas',
+  'spirit',
+  't-rex',
+]
+const featured = featureIds
+  .map((id) => ITEMS.find((i) => i.id === id))
+  .filter(Boolean)
+  .slice(0, 8)
+
+const strips = [
+  {
+    label: 'Values',
+    text: 'Full Blox Fruits value list — fruits, limiteds, and gamepasses with demand.',
+    href: '/values',
+    cta: 'Browse',
+  },
+  {
+    label: 'Calculator',
+    text: 'Put both sides of a trade and see if the values line up before you accept.',
+    href: '/calculator',
+    cta: 'Compare',
+  },
+]
+
+const faqs = [
+  {
+    q: 'What is the difference between price and value?',
+    a: 'Price is often the in-game beli cost. Value is what traders actually offer in fruit-for-fruit swaps — that is what this list tracks.',
+  },
+  {
+    q: 'How does demand affect trading?',
+    a: 'Demand (shown as stars) reflects how easy an item is to trade. High demand fruits move faster even at similar values.',
+  },
+  {
+    q: 'Why do some fruits have similar value but different demand?',
+    a: 'Value is the rough trade worth. Demand shows how wanted the fruit is — two items can sit near the same value while one is much easier to trade.',
+  },
+  {
+    q: 'How does the trade calculator work?',
+    a: 'Add fruits on both sides and compare totals. The difference line shows if the trade is around fair.',
+  },
+  {
+    q: 'Where do these Blox Fruits values come from?',
+    a: 'Community market values, refreshed regularly so the list and calculator stay aligned. Always double-check before accepting in-game.',
+  },
+]
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+---
+
+<Layout
+  title="Blox Fruits Value List & Trade Calculator"
+  description={`Blox Fruits value list and trade calculator. ${count}+ fruits with demand — check values before you trade.`}
+>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <div class="hero-bg"></div>
+      <div class="hero-props">
+        {
+          props.map((p, i) => (
+            <img
+              class={`prop ${p.class}`}
+              src={p.src}
+              alt=""
+              width="128"
+              height="128"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchpriority={i === 0 ? 'high' : 'low'}
+            />
+          ))
+        }
+      </div>
+      <div class="hero-shade"></div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="hero-kicker">For Blox Fruits traders</p>
+      <p class="hero-brand">BloxFruit<span>.fun</span></p>
+      <h1 class="hero-title">Blox Fruits Values</h1>
+      <p class="hero-sub">
+        Live Blox Fruits values with demand — then open the calculator and compare a trade before
+        you accept.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/values">Open Value List</a>
+        <a class="btn btn-ghost" href="/calculator">Trade Calculator</a>
+      </div>
+
+      <div class="hero-mobile-fruits" aria-hidden="true">
+        {
+          mobileFruits.map((src) => (
+            <img src={src} alt="" width="72" height="72" loading="lazy" decoding="async" />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <p class="home-banner">
+    <a href="/calculator">Trade calculator → compare both sides before you accept</a>
+  </p>
+
+  <section class="section" id="hot">
+    <div class="section-head">
+      <h2>Hot fruits</h2>
+      <p>High-value picks from the live list.</p>
+    </div>
+    <div class="hot-grid">
+      {
+        featured.map((item) => (
+          <a class="hot-card" href={itemHref(item!)}>
+            <span class="hot-name">{item!.name}</span>
+            <span class="hot-art">
+              {item!.image ? (
+                <img src={item!.image} alt="" width="88" height="88" loading="lazy" />
+              ) : (
+                <span class="item-card-fallback">?</span>
+              )}
+            </span>
+            <span class="hot-price">{formatValue(item!.value)}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="section-more">
+      <a href="/values">View all {count} values →</a>
+    </p>
+  </section>
+
+  <section class="section" id="tools">
+    <div class="strips">
+      {
+        strips.map((s) => (
+          <a class="strip" href={s.href}>
+            <strong>{s.label}</strong>
+            <p>{s.text}</p>
+            <em>{s.cta} →</em>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section how-section" id="how">
+    <div class="section-head">
+      <h2>How the calculator works</h2>
+      <p>Built to feel like the in-game trade popup.</p>
+    </div>
+    <ol class="how-steps">
+      <li>
+        <strong>Pick your side</strong>
+        <span>Tap an empty slot — green name bar, magenta price.</span>
+      </li>
+      <li>
+        <strong>Add one each</strong>
+        <span>Each fruit takes its own slot. Stack amounts are not used.</span>
+      </li>
+      <li>
+        <strong>Read the gap</strong>
+        <span>Totals and the red difference line show if the trade is around fair.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Essential info about Blox Fruits trading values.</p>
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+    <div class="faq-list">
+      {
+        faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

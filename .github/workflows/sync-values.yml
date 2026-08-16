@@ -1,0 +1,45 @@
+name: Sync Traderie values
+
+on:
+  schedule:
+    # every ~5 hours
+    - cron: "0 */5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-values
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install sync deps
+        run: |
+          pip install --quiet curl_cffi playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Fetch Traderie Blox Fruits values + images
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python scripts/sync_traderie.py
+
+      - name: Commit if values changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/items.json public/data public/items
+          if git diff --staged --quiet; then
+            echo "No value changes"
+            exit 0
+          fi
+          git commit -m "chore: sync Blox Fruits values from Traderie"
+          git push

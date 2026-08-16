@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { DemandStars } from './react/DemandStars'
+import { ITEMS, ITEMS_META } from '../data/items'
+import { formatValue, itemHref } from '../data/slugs'
+import type { BfItem } from '../data/catalog'
+
+interface Props {
+  item: BfItem
+}
+
+const { item } = Astro.props
+const valueLabel = formatValue(item.value)
+const typeLabel = item.type === 'Fruit' ? 'Fruits' : item.type
+const title = `${item.name} (${typeLabel}) - Blox Fruits Value List`
+const description = `${item.name} Blox Fruits value ${valueLabel}. ${item.rarity} ${item.type.toLowerCase()}, demand ${item.demand}/10. Check the value list and compare trades.`
+
+const related = ITEMS.filter(
+  (x) => x.id !== item.id && (x.rarity === item.rarity || x.type === item.type),
+)
+  .sort((a, b) => Math.abs(a.value - item.value) - Math.abs(b.value - item.value))
+  .slice(0, 8)
+
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: item.name,
+  description,
+  image: item.image ? `https://bloxfruit.fun${item.image}` : undefined,
+  category: `Blox Fruits ${typeLabel}`,
+  offers: {
+    '@type': 'Offer',
+    price: String(item.value),
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+  },
+}
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(productLd)} />
+  <article class="item-page">
+    <nav class="item-crumb" aria-label="Breadcrumb">
+      <a href="/values/">Value List</a>
+      <span aria-hidden="true">/</span>
+      <span>{item.name}</span>
+    </nav>
+
+    <header class="item-hero">
+      <div class="item-art">
+        {
+          item.image ? (
+            <img src={item.image} alt={`${item.name} Blox Fruits`} width={160} height={160} />
+          ) : (
+            <span class="item-art-empty">?</span>
+          )
+        }
+      </div>
+      <div class="item-copy">
+        <p class="legal-kicker">Blox Fruits value</p>
+        <h1>{item.name}</h1>
+        <p class="item-tags" style={item.rarityColor ? { color: item.rarityColor } : undefined}>
+          {item.rarity} · {item.type}
+        </p>
+        <DemandStars client:load demand={item.demand} />
+        <p class="item-demand-text">Demand {item.demand}/10</p>
+        <p class="item-value">
+          <strong>{valueLabel}</strong>
+          <span>Value</span>
+        </p>
+        <div class="item-actions">
+          <a class="btn btn-primary" href="/calculator/">Open Calculator</a>
+          <a class="btn btn-ghost" href="/values/">Back to list</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="item-blurb">
+      <h2>{item.name} value in Blox Fruits</h2>
+      <p>
+        <strong>{item.name}</strong> is a {item.rarity.toLowerCase()}{' '}
+        {item.type.toLowerCase()} in Roblox Blox Fruits. Current listed trade value is{' '}
+        <strong>{valueLabel}</strong> with demand <strong>{item.demand}/10</strong>.
+      </p>
+      <p class="item-value-note">
+        <strong>Value note:</strong> Values may fluctuate based on market conditions and are updated
+        frequently
+        {
+          ITEMS_META.updatedAt && (
+            <>
+              {' '}
+              (last update{' '}
+              {new Date(ITEMS_META.updatedAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+              )
+            </>
+          )
+        }. They are community trading references — not official Roblox or Blox Fruits prices.
+      </p>
+      <p>
+        Compare this fruit in a trade with the <a href="/calculator/">Blox Fruits trade calculator</a>,
+        or browse the full <a href="/values/">Blox Fruits value list</a>.
+      </p>
+    </section>
+
+    {
+      related.length > 0 && (
+        <section class="item-related">
+          <h2>Similar {item.rarity.toLowerCase()} items</h2>
+          <div class="item-related-grid">
+            {related.map((r) => (
+              <a class="item-related-card" href={itemHref(r)}>
+                {r.image ? (
+                  <img src={r.image} alt="" width={48} height={48} loading="lazy" />
+                ) : (
+                  <span>?</span>
+                )}
+                <span>
+                  <strong>{r.name}</strong>
+                  <em>{formatValue(r.value)}</em>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Layout>

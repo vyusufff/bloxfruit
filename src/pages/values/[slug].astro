@@ -1,0 +1,20 @@
+---
+import ItemValuePage from '../../components/ItemValuePage.astro'
+import { SLUG_ENTRIES } from '../../data/slugs'
+import type { BfItem } from '../../data/catalog'
+
+export function getStaticPaths() {
+  return SLUG_ENTRIES.map(({ slug, item }) => ({
+    params: { slug },
+    props: { item },
+  }))
+}
+
+interface Props {
+  item: BfItem
+}
+
+const { item } = Astro.props
+---
+
+<ItemValuePage item={item} />
