@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-31T11:17:17Z",
+  "updatedAt": "2026-08-31T20:34:39Z",
   "source": "traderie",
   "game": "bloxfruits",
-  "count": 95,
+  "count": 98,
   "rarityColors": {
     "Common": "#9ca3af",
     "Uncommon": "#4ade80",
@@ -24,6 +24,16 @@
       "rarityColor": "#fb7185",
       "type": "Fruit",
       "image": "/items/galaxy-empyrean-kitsune.png"
+    },
+    {
+      "id": "rabid-dog-blade",
+      "name": "Rabid Dog Blade",
+      "value": 7980000300.0,
+      "demand": 10,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/rabid-dog-blade.png"
     },
     {
       "id": "crimson-kitsune",
@@ -54,6 +64,16 @@
       "rarityColor": "#c084fc",
       "type": "Fruit",
       "image": "/items/dragon-east.jpg"
+    },
+    {
+      "id": "doghouse-frame-break",
+      "name": "Doghouse (Frame Break)",
+      "value": 6630000000.0,
+      "demand": 10,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/doghouse-frame-break.png"
     },
     {
       "id": "ember-west-dragon",
@@ -96,6 +116,16 @@
       "image": "/items/purple-lightning.png"
     },
     {
+      "id": "yeti",
+      "name": "Yeti",
+      "value": 4289999900.0,
+      "demand": 9,
+      "rarity": "Mythical",
+      "rarityColor": "#c084fc",
+      "type": "Fruit",
+      "image": "/items/yeti.jpg"
+    },
+    {
       "id": "tiger",
       "name": "Tiger",
       "value": 4289999900.0,
@@ -114,16 +144,6 @@
       "rarityColor": "#fb7185",
       "type": "Fruit",
       "image": "/items/meme-meme.png"
-    },
-    {
-      "id": "yeti",
-      "name": "Yeti",
-      "value": 4289999900.0,
-      "demand": 9,
-      "rarity": "Mythical",
-      "rarityColor": "#c084fc",
-      "type": "Fruit",
-      "image": "/items/yeti.jpg"
     },
     {
       "id": "fruit-notifier",
@@ -266,16 +286,6 @@
       "image": "/items/red-lightning.png"
     },
     {
-      "id": "portal",
-      "name": "Portal",
-      "value": 2489999900.0,
-      "demand": 9,
-      "rarity": "Legendary",
-      "rarityColor": "#fbbf24",
-      "type": "Fruit",
-      "image": "/items/portal.png"
-    },
-    {
       "id": "bird-phoenix",
       "name": "Bird: Phoenix",
       "value": 2489999900.0,
@@ -284,6 +294,16 @@
       "rarityColor": "#fbbf24",
       "type": "Fruit",
       "image": "/items/bird-phoenix.png"
+    },
+    {
+      "id": "portal",
+      "name": "Portal",
+      "value": 2489999900.0,
+      "demand": 9,
+      "rarity": "Legendary",
+      "rarityColor": "#fbbf24",
+      "type": "Fruit",
+      "image": "/items/portal.png"
     },
     {
       "id": "sound",
@@ -406,14 +426,14 @@
       "image": "/items/ghost.png"
     },
     {
-      "id": "rubber",
-      "name": "Rubber",
+      "id": "fiend-yeti",
+      "name": "Fiend Yeti",
       "value": 990000000.0,
-      "demand": 3,
-      "rarity": "Rare",
-      "rarityColor": "#60a5fa",
+      "demand": 9,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
       "type": "Fruit",
-      "image": "/items/rubber.png"
+      "image": "/items/fiend-yeti.png"
     },
     {
       "id": "dark-blade-game-pass",
@@ -426,24 +446,14 @@
       "image": "/items/dark-blade-game-pass.png"
     },
     {
-      "id": "fiend-yeti",
-      "name": "Fiend Yeti",
+      "id": "rubber",
+      "name": "Rubber",
       "value": 990000000.0,
-      "demand": 9,
-      "rarity": "Limited",
-      "rarityColor": "#fb7185",
-      "type": "Fruit",
-      "image": "/items/fiend-yeti.png"
-    },
-    {
-      "id": "light",
-      "name": "Light",
-      "value": 930000000.0,
-      "demand": 7,
+      "demand": 3,
       "rarity": "Rare",
       "rarityColor": "#60a5fa",
       "type": "Fruit",
-      "image": "/items/light.png"
+      "image": "/items/rubber.png"
     },
     {
       "id": "celestial-pain",
@@ -454,6 +464,16 @@
       "rarityColor": "#fb7185",
       "type": "Fruit",
       "image": "/items/celestial-pain.png"
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "value": 930000000.0,
+      "demand": 7,
+      "rarity": "Rare",
+      "rarityColor": "#60a5fa",
+      "type": "Fruit",
+      "image": "/items/light.png"
     },
     {
       "id": "frustration-pain",
@@ -484,6 +504,16 @@
       "rarityColor": "#4ade80",
       "type": "Fruit",
       "image": "/items/diamond.png"
+    },
+    {
+      "id": "dog-blade",
+      "name": "Dog Blade",
+      "value": 750000000.0,
+      "demand": 10,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/dog-blade.png"
     },
     {
       "id": "eagle",
@@ -576,16 +606,6 @@
       "image": "/items/flame.png"
     },
     {
-      "id": "2x-money-game-pass",
-      "name": "2x Money Game Pass",
-      "value": 420000000.0,
-      "demand": 10,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Gamepass",
-      "image": "/items/2x-money-game-pass.png"
-    },
-    {
       "id": "1-fruit-storage",
       "name": "+1 Fruit Storage",
       "value": 420000000.0,
@@ -604,6 +624,16 @@
       "rarityColor": "#a3a3a3",
       "type": "Gamepass",
       "image": "/items/2x-mastery-game-pass.png"
+    },
+    {
+      "id": "2x-money-game-pass",
+      "name": "2x Money Game Pass",
+      "value": 420000000.0,
+      "demand": 10,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Gamepass",
+      "image": "/items/2x-money-game-pass.png"
     },
     {
       "id": "green-lightning",
@@ -636,16 +666,6 @@
       "image": "/items/rose-quartz-diamond.png"
     },
     {
-      "id": "2x-drop-chance-game-pass",
-      "name": "2x Drop Chance Game Pass",
-      "value": 300000000.0,
-      "demand": 8,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Gamepass",
-      "image": "/items/2x-drop-chance-game-pass.png"
-    },
-    {
       "id": "faster-boats-game-pass",
       "name": "Faster Boats Game Pass",
       "value": 300000000.0,
@@ -654,6 +674,16 @@
       "rarityColor": "#a3a3a3",
       "type": "Gamepass",
       "image": "/items/faster-boats-game-pass.png"
+    },
+    {
+      "id": "2x-drop-chance-game-pass",
+      "name": "2x Drop Chance Game Pass",
+      "value": 300000000.0,
+      "demand": 8,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Gamepass",
+      "image": "/items/2x-drop-chance-game-pass.png"
     },
     {
       "id": "eagle-matrix",
@@ -686,16 +716,6 @@
       "image": "/items/topaz-diamond.png"
     },
     {
-      "id": "eagle-requiem",
-      "name": "Eagle Requiem",
-      "value": 150000000.0,
-      "demand": 4,
-      "rarity": "Limited",
-      "rarityColor": "#fb7185",
-      "type": "Fruit",
-      "image": "/items/eagle-requiem.png"
-    },
-    {
       "id": "torment-pain",
       "name": "Torment Pain",
       "value": 150000000.0,
@@ -714,6 +734,16 @@
       "rarityColor": "#fb7185",
       "type": "Fruit",
       "image": "/items/ruby-diamond.png"
+    },
+    {
+      "id": "eagle-requiem",
+      "name": "Eagle Requiem",
+      "value": 150000000.0,
+      "demand": 4,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/eagle-requiem.png"
     },
     {
       "id": "spike",
@@ -776,16 +806,6 @@
       "image": ""
     },
     {
-      "id": "eagle-glacier",
-      "name": "Eagle Glacier",
-      "value": 20000000.0,
-      "demand": 4,
-      "rarity": "Limited",
-      "rarityColor": "#fb7185",
-      "type": "Fruit",
-      "image": "/items/eagle-glacier.png"
-    },
-    {
       "id": "blade",
       "name": "Blade",
       "value": 20000000.0,
@@ -794,6 +814,16 @@
       "rarityColor": "#9ca3af",
       "type": "Fruit",
       "image": "/items/blade.png"
+    },
+    {
+      "id": "eagle-glacier",
+      "name": "Eagle Glacier",
+      "value": 20000000.0,
+      "demand": 4,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/eagle-glacier.png"
     },
     {
       "id": "spin",
@@ -826,108 +856,8 @@
       "image": "/items/celebration-bomb.png"
     },
     {
-      "id": "flame-raid",
-      "name": "Flame Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "quake-raid",
-      "name": "Quake Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "ice-raid",
-      "name": "Ice Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "rumble-raid",
-      "name": "Rumble Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "string-raid",
-      "name": "String Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "light-raid",
-      "name": "Light Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "dark-raid",
-      "name": "Dark Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
       "id": "dough-raid",
       "name": "Dough Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "magma-raid",
-      "name": "Magma Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "sand-raid",
-      "name": "Sand Raid",
-      "value": 0.0,
-      "demand": 0,
-      "rarity": "Misc",
-      "rarityColor": "#a3a3a3",
-      "type": "Raids",
-      "image": ""
-    },
-    {
-      "id": "human-buddha-raid",
-      "name": "Human: Buddha Raid",
       "value": 0.0,
       "demand": 0,
       "rarity": "Misc",
@@ -956,8 +886,108 @@
       "image": "/items/stat-reset.jpg"
     },
     {
+      "id": "human-buddha-raid",
+      "name": "Human: Buddha Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "flame-raid",
+      "name": "Flame Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
       "id": "bird-phoenix-raid",
       "name": "Bird: Phoenix Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "sand-raid",
+      "name": "Sand Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "magma-raid",
+      "name": "Magma Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "dark-raid",
+      "name": "Dark Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "quake-raid",
+      "name": "Quake Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "rumble-raid",
+      "name": "Rumble Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "ice-raid",
+      "name": "Ice Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "string-raid",
+      "name": "String Raid",
+      "value": 0.0,
+      "demand": 0,
+      "rarity": "Misc",
+      "rarityColor": "#a3a3a3",
+      "type": "Raids",
+      "image": ""
+    },
+    {
+      "id": "light-raid",
+      "name": "Light Raid",
       "value": 0.0,
       "demand": 0,
       "rarity": "Misc",
