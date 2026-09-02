@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T22:17:55Z",
+  "updatedAt": "2026-09-02T02:22:07Z",
   "source": "traderie",
   "game": "bloxfruits",
   "count": 98,
@@ -556,16 +556,6 @@
       "image": "/items/legendary-scroll.jpg"
     },
     {
-      "id": "nuclear-bomb",
-      "name": "Nuclear Bomb",
-      "value": 610000000.0,
-      "demand": 6,
-      "rarity": "Limited",
-      "rarityColor": "#fb7185",
-      "type": "Fruit",
-      "image": "/items/nuclear-bomb.png"
-    },
-    {
       "id": "ice",
       "name": "Ice",
       "value": 600000000.0,
@@ -584,6 +574,16 @@
       "rarityColor": "#fb7185",
       "type": "Fruit",
       "image": "/items/azura-bomb.png"
+    },
+    {
+      "id": "nuclear-bomb",
+      "name": "Nuclear Bomb",
+      "value": 570000000.0,
+      "demand": 6,
+      "rarity": "Limited",
+      "rarityColor": "#fb7185",
+      "type": "Fruit",
+      "image": "/items/nuclear-bomb.png"
     },
     {
       "id": "thermite-bomb",
